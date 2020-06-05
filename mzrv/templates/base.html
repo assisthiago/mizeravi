@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <title>Mizeravi</title>
+</head>
+<body>
+    <!-- Nav -->
+    {% include 'partials/_nav.html' %}
+
+    <!-- Search -->
+    {% include 'partials/_search.html' %}
+
+    <!-- Content -->
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
