@@ -1,3 +1,11 @@
 <footer id="main-footer" class="py-4 bg-primary text-white text-center">
-    <span>Copyright &copy; Mizeravi | 21 99999 9999 / email@mail.com</span>
+    <p><span id="year"></span> &copy; Mizeravi</p>
+    <span>21 99999 9999 | email@mail.com</span>
 </footer>
+
+<script>
+    (function() {
+        const date = new Date();
+        document.querySelector('#year').innerHTML = date.getFullYear();
+    })();
+</script>
