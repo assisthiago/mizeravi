@@ -1,7 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1>Jogos</h1>
+<div class="card-deck mb-3 text-center">
+    {% include 'partials/_card.html' %}
+    {% include 'partials/_card.html' %}
+    {% include 'partials/_card.html' %}
+</div>
+<hr>
 <h1>Videogames</h1>
+<div class="card-deck mb-3 text-center">
+    {% include 'partials/_card.html' %}
+    {% include 'partials/_card.html' %}
+    {% include 'partials/_card.html' %}
+</div>
+<hr>
 <h1>Acessórios</h1>
+<div class="card-deck mb-3 text-center">
+    {% include 'partials/_card.html' %}
+    {% include 'partials/_card.html' %}
+    {% include 'partials/_card.html' %}
+</div>
+
 {% endblock %}
