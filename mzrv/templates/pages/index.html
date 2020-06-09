@@ -2,25 +2,42 @@
 
 {% block content %}
 
-<h1>Jogos</h1>
-<div class="card-deck mb-3 text-center">
-    {% include 'partials/_card.html' %}
-    {% include 'partials/_card.html' %}
-    {% include 'partials/_card.html' %}
-</div>
+<section id="games" class="mb-3">
+    <h1>Jogos</h1>
+    <div class="card-deck mb-3 text-center">
+        {% include 'partials/_card.html' %}
+        {% include 'partials/_card.html' %}
+        {% include 'partials/_card.html' %}
+    </div>
+    <div class="text-center">
+        <a href="">Ver mais</a>
+    </div>
+</section>
 <hr>
-<h1>Videogames</h1>
-<div class="card-deck mb-3 text-center">
-    {% include 'partials/_card.html' %}
-    {% include 'partials/_card.html' %}
-    {% include 'partials/_card.html' %}
-</div>
+
+<section id="videgames" class="mb-3">
+    <h1>Videogames</h1>
+    <div class="card-deck mb-3 text-center">
+        {% include 'partials/_card.html' %}
+        {% include 'partials/_card.html' %}
+        {% include 'partials/_card.html' %}
+    </div>
+    <div class="text-center">
+        <a href="">Ver mais</a>
+    </div>
+</section>
 <hr>
-<h1>Acessórios</h1>
-<div class="card-deck mb-3 text-center">
-    {% include 'partials/_card.html' %}
-    {% include 'partials/_card.html' %}
-    {% include 'partials/_card.html' %}
-</div>
+
+<section id="acessories" class="mb-3">
+    <h1>Acessórios</h1>
+    <div class="card-deck mb-3 text-center">
+        {% include 'partials/_card.html' %}
+        {% include 'partials/_card.html' %}
+        {% include 'partials/_card.html' %}
+    </div>
+    <div class="text-center">
+        <a href="">Ver mais</a>
+    </div>
+</section>
 
 {% endblock %}
