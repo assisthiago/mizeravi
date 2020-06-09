@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>{{ page }}</h1>
+
+<div class="row mb-3">
+    {% for object in objects %}
+        {% include 'partials/_card.html' with data=object %}
+    {% endfor %}
+</div>
+
+{% endblock%}

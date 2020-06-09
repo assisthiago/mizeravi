@@ -1,9 +1,0 @@
-/* Cards */
-.card-deck {
-    display: flex;
-    flex-flow: row wrap
-}
-
-.card-deck .card {
-    width: 290px;
-}

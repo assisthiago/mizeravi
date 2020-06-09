@@ -4,39 +4,41 @@
 
 <section id="games" class="mb-3">
     <h1>Jogos</h1>
-    <div class="card-deck mb-3 text-center">
-        {% include 'partials/_card.html' %}
-        {% include 'partials/_card.html' %}
-        {% include 'partials/_card.html' %}
+    <div class="row">
+        {% for object in games %}
+            {% include 'partials/_card.html' with data=object %}
+        {% endfor %}
     </div>
     <div class="text-center">
-        <a href="">Ver mais</a>
+        <a href="/games">Ver mais</a>
     </div>
 </section>
+
 <hr>
 
-<section id="videgames" class="mb-3">
+<section id="consoles" class="mb-3">
     <h1>Videogames</h1>
-    <div class="card-deck mb-3 text-center">
-        {% include 'partials/_card.html' %}
-        {% include 'partials/_card.html' %}
-        {% include 'partials/_card.html' %}
+    <div class="row">
+        {% for object in consoles %}
+            {% include 'partials/_card.html' with data=object %}
+        {% endfor %}
     </div>
     <div class="text-center">
-        <a href="">Ver mais</a>
+        <a href="/consoles">Ver mais</a>
     </div>
 </section>
+
 <hr>
 
 <section id="acessories" class="mb-3">
     <h1>Acessórios</h1>
-    <div class="card-deck mb-3 text-center">
-        {% include 'partials/_card.html' %}
-        {% include 'partials/_card.html' %}
-        {% include 'partials/_card.html' %}
+    <div class="row">
+        {% for object in acessories %}
+            {% include 'partials/_card.html' with data=object %}
+        {% endfor %}
     </div>
     <div class="text-center">
-        <a href="">Ver mais</a>
+        <a href="/acessories">Ver mais</a>
     </div>
 </section>
 
