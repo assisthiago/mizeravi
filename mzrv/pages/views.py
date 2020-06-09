@@ -9,23 +9,20 @@ def index(request):
                 'img': 'https://via.placeholder.com/150',
                 'title': 'Red Dead Redemption 2',
                 'price': '199.99',
-                'url': '/games/1'
             }
         ],
         'consoles': [
             {
                 'img': 'https://via.placeholder.com/150',
-                'title': 'Playstation 4',
+                'title': 'PlayStation 4 1TB',
                 'price': '1899.99',
-                'url': '/consoles/1'
             }
         ],
         'acessories': [
             {
                 'img': 'https://via.placeholder.com/150',
-                'title': 'Controle PS4',
+                'title': 'Controle Dualshock 4 - PlayStation 4 - Preto',
                 'price': '159.99',
-                'url': '/acessories/1'
             }
         ]
     }
@@ -39,7 +36,6 @@ def games(request):
                 'img': 'https://via.placeholder.com/150',
                 'title': 'Red Dead Redemption 2',
                 'price': '199.99',
-                'url': '/games/1'
             }
         ]
     }
@@ -47,13 +43,12 @@ def games(request):
 
 def consoles(request):
     extra_context = {
-        'page': 'Videogames',
+        'page': 'Consoles',
         'objects': [
             {
                 'img': 'https://via.placeholder.com/150',
-                'title': 'Playstation 4',
+                'title': 'PlayStation 4 1TB',
                 'price': '1899.99',
-                'url': '/consoles/1'
             }
         ]
     }
@@ -65,9 +60,8 @@ def acessories(request):
         'objects': [
             {
                 'img': 'https://via.placeholder.com/150',
-                'title': 'Controle PS4',
+                'title': 'Controle Dualshock 4 - PlayStation 4 - Preto',
                 'price': '159.99',
-                'url': '/acessories/1'
             }
         ]
     }
