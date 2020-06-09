@@ -3,43 +3,61 @@
 {% block content %}
 
 <section id="games" class="mb-3">
-    <h1>Jogos</h1>
-    <div class="row">
-        {% for object in games %}
-            {% include 'partials/_card.html' with data=object %}
-        {% endfor %}
-    </div>
-    <div class="text-center">
-        <a href="/games">Ver mais</a>
-    </div>
-</section>
 
-<hr>
+    {% if games %}
+        <h1>Jogos</h1>
+
+        <div class="row">
+            {% for object in games %}
+                {% include 'partials/_card.html' with data=object %}
+            {% endfor %}
+        </div>
+
+        <div class="text-center">
+            <a href="/games">Ver mais</a>
+        </div>
+
+        <hr>
+    {% endif %}
+
+</section>
 
 <section id="consoles" class="mb-3">
-    <h1>Consoles</h1>
-    <div class="row">
-        {% for object in consoles %}
-            {% include 'partials/_card.html' with data=object %}
-        {% endfor %}
-    </div>
-    <div class="text-center">
-        <a href="/consoles">Ver mais</a>
-    </div>
+
+    {% if consoles %}
+        <h1>Consoles</h1>
+
+        <div class="row">
+            {% for object in consoles %}
+                {% include 'partials/_card.html' with data=object %}
+            {% endfor %}
+        </div>
+
+        <div class="text-center">
+            <a href="/consoles">Ver mais</a>
+        </div>
+
+        <hr>
+    {% endif %}
+
 </section>
 
-<hr>
-
 <section id="acessories" class="mb-3">
-    <h1>Acessórios</h1>
-    <div class="row">
-        {% for object in acessories %}
-            {% include 'partials/_card.html' with data=object %}
-        {% endfor %}
-    </div>
-    <div class="text-center">
-        <a href="/acessories">Ver mais</a>
-    </div>
+
+    {% if acessories %}
+        <h1>Acessórios</h1>
+
+        <div class="row">
+            {% for object in acessories %}
+                {% include 'partials/_card.html' with data=object %}
+            {% endfor %}
+        </div>
+
+        <div class="text-center">
+            <a href="/acessories">Ver mais</a>
+        </div>
+    {% endif %}
+
 </section>
 
 {% endblock %}
