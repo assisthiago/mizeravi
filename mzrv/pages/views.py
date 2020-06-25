@@ -25,7 +25,7 @@ def games(request):
 
 def consoles(request):
     extra_context = {
-        'page': 'Consoles',
+        'page': 'Videogames',
         'objects': [
             {
                 'img': 'https://via.placeholder.com/150',
