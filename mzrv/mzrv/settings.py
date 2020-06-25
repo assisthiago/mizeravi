@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'consoles.apps.ConsolesConfig',
     'games.apps.GamesConfig',
     'pages.apps.PagesConfig',
+    'rangefilter',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
