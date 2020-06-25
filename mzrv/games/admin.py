@@ -1,5 +1,11 @@
 from django.contrib import admin
+
+from .forms import GameForm
 from .models import Games
 
-# Register your models here.
-admin.site.register(Games)
+
+class GameAdmin(admin.ModelAdmin):
+    form = GameForm
+
+
+admin.site.register(Games, GameAdmin)

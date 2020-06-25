@@ -1,10 +1,15 @@
 <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
     <div class="card-deck text-center">
         <div class="card">
-            <img src="{{ object.img }}" class="card-img-top" alt="...">
+            <img src="media/{{ object.main_photo }}" class="card-img-top" alt="{{ obj.name }}">
             <div class="card-body">
                 <h5 class="card-title">R${{ object.price }}</h5>
-                <p class="card-text">{{ object.title }}</p>
+                <p class="card-text">{{ object.name }}</p>
+                <ul class="list-group">
+                    {% for plataform in object.plataform %}
+                        <li class="list-group-item">{{ plataform }}</li>
+                    {% endfor %}
+                  </ul>
             </div>
         </div>
     </div>

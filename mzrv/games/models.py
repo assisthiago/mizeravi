@@ -14,4 +14,5 @@ class Games(models.Model):
         return self.name
 
     class Meta():
+        ordering = ('-created_at',)
         verbose_name = 'Jogo'
