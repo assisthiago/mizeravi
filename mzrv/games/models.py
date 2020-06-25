@@ -15,7 +15,7 @@ class Games(models.Model):
 
     main_photo = models.ImageField(
         upload_to='photos/games/',
-        verbose_name='Foto',)
+        verbose_name='Imagem',)
 
     plataforms = ArrayField(
         models.CharField(max_length=200),

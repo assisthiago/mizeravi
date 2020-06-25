@@ -1,15 +1,17 @@
 from django.shortcuts import render
 
 from games.models import Games
+from consoles.models import Consoles
 
 
 def index(request):
+    consoles = Consoles.objects.all()[:3]
     games = Games.objects.all()[:3]
 
     extra_context = {
         'page': 'Jogos',
         'games': games,
-        'consoles': [],
+        'consoles': consoles,
         'acessories': []
     }
     return render(request, 'pages/index.html', extra_context)
@@ -24,15 +26,11 @@ def games(request):
     return render(request, 'pages/listings.html', extra_context)
 
 def consoles(request):
+    consoles = Consoles.objects.all().order_by('name')
+
     extra_context = {
         'page': 'Videogames',
-        'objects': [
-            {
-                'img': 'https://via.placeholder.com/150',
-                'title': 'PlayStation 4 1TB',
-                'price': '1899.99',
-            }
-        ]
+        'objects': consoles
     }
     return render(request, 'pages/listings.html', extra_context)
 

@@ -28,4 +28,9 @@ class GameForm(forms.ModelForm):
 
     class Meta:
         model = Games
-        fields = ('name',)
+        fields = (
+            'name',
+            'price',
+            'main_photo',
+            'plataforms',
+        )
