@@ -2,7 +2,7 @@ from datetime import datetime
 from django.db import models
 
 
-class Consoles(models.Model):
+class Accessories(models.Model):
     name = models.CharField(
         max_length=200,
         verbose_name='Nome')
@@ -12,7 +12,7 @@ class Consoles(models.Model):
         verbose_name='Preço')
 
     main_photo = models.ImageField(
-        upload_to='photos/consoles/',
+        upload_to='photos/accessories/',
         verbose_name='Imagem')
 
     plataform = models.CharField(
@@ -29,4 +29,4 @@ class Consoles(models.Model):
 
     class Meta():
         ordering = ('name',)
-        verbose_name = 'Videogame'
+        verbose_name = 'Accessório'

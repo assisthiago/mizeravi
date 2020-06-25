@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accessories.apps.AccessoriesConfig',
     'consoles.apps.ConsolesConfig',
     'games.apps.GamesConfig',
     'pages.apps.PagesConfig',

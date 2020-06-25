@@ -42,19 +42,19 @@
 
 </section>
 
-<section id="acessories" class="mb-3">
+<section id="accessories" class="mb-3">
 
-    {% if acessories %}
+    {% if accessories %}
         <h1>Acessórios</h1>
 
         <div class="row">
-            {% for object in acessories %}
+            {% for object in accessories %}
                 {% include 'partials/_card.html' with data=object %}
             {% endfor %}
         </div>
 
         <div class="text-center">
-            <a href="/acessories">Ver mais</a>
+            <a href="/accessories">Ver mais</a>
         </div>
     {% endif %}
 
