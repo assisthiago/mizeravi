@@ -4,7 +4,6 @@ from .models import Accessories
 
 
 PLATAFORM_CHOICES = (
-    ('', 'Escolha uma opção'),
     ('Microsoft', 'Microsoft'),
     ('Nintendo', 'Nintendo'),
     ('Playstation', 'Playstation'),
@@ -21,6 +20,7 @@ class AccessoryForm(forms.ModelForm):
 
     plataform = forms.ChoiceField(
         label='Plataforma',
+        widget=forms.RadioSelect,
         choices=PLATAFORM_CHOICES)
 
     class Meta:

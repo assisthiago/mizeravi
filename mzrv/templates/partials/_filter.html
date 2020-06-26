@@ -1,0 +1,43 @@
+<form>
+    <div class="form-group">
+        <label for="plataform">Filtro por Plataforma:</label>
+        {% for choice in filter.plataform_choices %}
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="plataforms" value="{{ choice }}" id="{{ choice }}">
+                <label class="form-check-label" for="{{ choice }}">{{ choice }}</label>
+            </div>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        <label for="price">Filtro por Preço:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="price" id="1_49" value="1_49">
+            <label class="form-check-label" for="1_49">De R$1,00 até R$49,99</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="price" id="50_99" value="50_99">
+            <label class="form-check-label" for="50_99">De R$50,00 até R$99,99</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="price" id="100_149" value="100_149">
+            <label class="form-check-label" for="100_149">De R$100,00 até R$149,99</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="price" id="150_199" value="150_199">
+            <label class="form-check-label" for="150_199">De R$150,00 até R$199,99</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="price" id="200_299" value="200_299">
+            <label class="form-check-label" for="200_299">De R$200,00 até R$299,99</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="price" id="300_399" value="300_399">
+            <label class="form-check-label" for="300_399">De R$300,00 até R$399,99</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="price" id="300_499" value="300_499">
+            <label class="form-check-label" for="300_499">De R$300,00 até R$499,99</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>

@@ -3,7 +3,7 @@ from django import forms
 from .models import Games
 
 
-PLATAFORMS_CHOICES = (
+PLATAFORM_CHOICES = (
     ('Nintendo DS', 'Nintendo DS'),
     ('Nintendo Switch', 'Nintendo Switch'),
     ('Playstation 3', 'Playstation 3'),
@@ -24,7 +24,7 @@ class GameForm(forms.ModelForm):
     plataforms = forms.MultipleChoiceField(
         label='Plataformas',
         widget=forms.CheckboxSelectMultiple,
-        choices=PLATAFORMS_CHOICES)
+        choices=PLATAFORM_CHOICES)
 
     class Meta:
         model = Games

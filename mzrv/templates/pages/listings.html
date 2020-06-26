@@ -6,9 +6,18 @@
 <h1>{{ page }}</h1>
 
 <div class="row mb-3">
-    {% for object in objects %}
-        {% include 'partials/_card.html' with data=object %}
-    {% endfor %}
+
+    <div class="col-lg-4 col-md-5 col-sm-12">
+        {% include 'partials/_filter.html' with data=filter %}
+    </div>
+
+    <div class="col-lg-8 col-md-7 col-sm-12">
+        <div class="row">
+            {% for object in objects %}
+                {% include 'partials/_card.html' with data=object %}
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% endblock%}

@@ -8,7 +8,7 @@ class PlataformFilter(SimpleListFilter):
     parameter_name = 'plataforms'
 
     def lookups(self, request, model_admin):
-        return PLATAFORM_CHOICES[1:]
+        return PLATAFORM_CHOICES
 
     def queryset(self, request, queryset):
         if self.value():
