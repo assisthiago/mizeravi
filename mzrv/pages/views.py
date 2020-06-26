@@ -8,6 +8,7 @@ from accessories.models import Accessories
 from consoles.models import Consoles
 from games.models import Games
 
+from . import helpers
 
 def index(request):
     accessories = Accessories.objects.all().order_by('-created_at')[:3]
@@ -23,7 +24,12 @@ def index(request):
     return render(request, 'pages/index.html', extra_context)
 
 def games(request):
-    games = Games.objects.all()
+    if bool(request.GET):
+        plataform_lookup, price_lookup = helpers.build_lookup(request, 'games')
+        games = Games.objects.filter(plataform_lookup, price_lookup)
+    else:
+        games = Games.objects.all()
+
     plataform_choices = [plataform[0] for plataform in GAME_PLATAFORM_CHOICES]
 
     extra_context = {
@@ -34,7 +40,12 @@ def games(request):
     return render(request, 'pages/listings.html', extra_context)
 
 def consoles(request):
-    consoles = Consoles.objects.all()
+    if bool(request.GET):
+        plataform_lookup, price_lookup = helpers.build_lookup(request, 'consoles')
+        consoles = Consoles.objects.filter(plataform_lookup, price_lookup)
+    else:
+        consoles = Consoles.objects.all()
+
     plataform_choices = [plataform[0] for plataform in CONSOLE_PLATAFORM_CHOICES]
 
     extra_context = {
@@ -45,7 +56,12 @@ def consoles(request):
     return render(request, 'pages/listings.html', extra_context)
 
 def accessories(request):
-    accessories = Accessories.objects.all()
+    if bool(request.GET):
+        plataform_lookup, price_lookup = helpers.build_lookup(request, 'accessories')
+        accessories = Accessories.objects.filter(plataform_lookup, price_lookup)
+    else:
+        accessories = Accessories.objects.all()
+
     plataform_choices = [plataform[0] for plataform in ACCESSORIES_PLATAFORM_CHOICES]
 
     extra_context = {

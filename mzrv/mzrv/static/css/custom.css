@@ -9,6 +9,10 @@
     color: white;
 }
 
+.btn.clean {
+    padding: 0;
+}
+
 @media only screen and (max-width: 425px) {
     .card-deck .card {
         width: auto;
