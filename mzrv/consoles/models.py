@@ -1,4 +1,5 @@
 from datetime import datetime
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 
@@ -15,9 +16,9 @@ class Consoles(models.Model):
         upload_to='photos/consoles/',
         verbose_name='Imagem')
 
-    plataforms = models.CharField(
-        max_length=200,
-        verbose_name='Plataforma')
+    plataforms = ArrayField(
+        models.CharField(max_length=200),
+        verbose_name='Plataformas')
 
     created_at = models.DateTimeField(
         default=datetime.now, blank=True,

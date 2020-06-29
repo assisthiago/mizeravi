@@ -18,9 +18,9 @@ class ConsoleForm(forms.ModelForm):
 
     main_photo = forms.ImageField(label='Foto')
 
-    plataforms = forms.ChoiceField(
+    plataforms = forms.MultipleChoiceField(
         label='Plataforma',
-        widget=forms.RadioSelect,
+        widget=forms.CheckboxSelectMultiple,
         choices=PLATAFORM_CHOICES)
 
     class Meta:

@@ -5,18 +5,11 @@ def build_search_lookups(request):
     return Q(name__contains=value) | Q(plataforms__contains=value)
 
 def build_filters_lookups(request, model_name):
-    if model_name == 'games':
-        if request.GET.getlist('plataforms'):
-            plataforms = request.GET.getlist('plataforms')
-            plataform_lookup = Q(plataforms__contains=plataforms)
-        else:
-            plataform_lookup = Q(plataforms__isnull=False)
+    if request.GET.getlist('plataforms'):
+        plataforms = request.GET.getlist('plataforms')
+        plataforms_lookup = Q(plataforms__contains=plataforms)
     else:
-        if request.GET.get('plataforms'):
-            plataforms = request.GET.get('plataforms')
-            plataform_lookup = Q(plataform=plataforms)
-        else:
-            plataform_lookup = Q(plataform__isnull=False)
+        plataforms_lookup = Q(plataforms__isnull=False)
 
     if request.GET.get('price'):
         gte, lte = request.GET.get('price').split('_')
@@ -26,14 +19,11 @@ def build_filters_lookups(request, model_name):
     else:
         price_lookup = Q(price__isnull=False)
 
-    return (plataform_lookup, price_lookup)
+    return (plataforms_lookup, price_lookup)
 
 def check_which_filter_is_selected(request):
     if request.GET.getlist('plataforms'):
         plataforms = request.GET.getlist('plataforms')
-        plataforms_filters = [p.lower().replace(' ', '-') for p in plataforms]
-    elif request.GET.get('plataforms'):
-        plataforms = request.GET.get('plataforms')
         plataforms_filters = [p.lower().replace(' ', '-') for p in plataforms]
     else:
         plataforms_filters = []

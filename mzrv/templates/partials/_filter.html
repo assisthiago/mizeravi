@@ -1,10 +1,11 @@
 <form>
     <div class="form-group">
         <label for="plataform">Filtro por Plataforma:</label>
-        {% for choice in filter.plataform_choices %}
+        {% for choice in filter.plataforms_choices %}
             <div class="form-check">
                 <input class="form-check-input input-plataform" type="checkbox" name="plataforms" value="{{ choice }}" id="{{ choice|slugify }}"
-                    {% for choice_selected in filter.filters_selected.plataform %}
+                    {% for choice_selected in filter.filters_selected.plataforms %}
+                        data-choice="{{choice|slugify}}" data-selected="{{choice_selected}}"
                         {% if choice|slugify in choice_selected %} checked {% endif %}
                     {% endfor %}>
                 <label class="form-check-label" for="{{ choice|slugify }}">{{ choice }}</label>
