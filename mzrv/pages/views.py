@@ -11,9 +11,19 @@ from games.models import Games
 from . import helpers
 
 def index(request):
-    accessories = Accessories.objects.all().order_by('-created_at')[:3]
-    consoles = Consoles.objects.all().order_by('-created_at')[:3]
-    games = Games.objects.all().order_by('-created_at')[:3]
+    if bool(request.GET):
+        search_lookups = helpers.build_search_lookups(request)
+
+        accessories = Accessories.objects.filter(
+            search_lookups).order_by('-created_at')
+        consoles = Consoles.objects.filter(
+            search_lookups).order_by('-created_at')
+        games = Games.objects.filter(
+            search_lookups).order_by('-created_at')
+    else:
+        accessories = Accessories.objects.all().order_by('-created_at')[:3]
+        consoles = Consoles.objects.all().order_by('-created_at')[:3]
+        games = Games.objects.all().order_by('-created_at')[:3]
 
     extra_context = {
         'page': 'Jogos',
@@ -25,7 +35,7 @@ def index(request):
 
 def games(request):
     if bool(request.GET):
-        plataform_lookup, price_lookup = helpers.build_lookups(request, 'games')
+        plataform_lookup, price_lookup = helpers.build_filters_lookups(request, 'games')
         games = Games.objects.filter(plataform_lookup, price_lookup)
     else:
         games = Games.objects.all()
@@ -48,7 +58,7 @@ def games(request):
 
 def consoles(request):
     if bool(request.GET):
-        plataform_lookup, price_lookup = helpers.build_lookups(request, 'consoles')
+        plataform_lookup, price_lookup = helpers.build_filters_lookups(request, 'consoles')
         consoles = Consoles.objects.filter(plataform_lookup, price_lookup)
     else:
         consoles = Consoles.objects.all()
@@ -71,7 +81,7 @@ def consoles(request):
 
 def accessories(request):
     if bool(request.GET):
-        plataform_lookup, price_lookup = helpers.build_lookups(request, 'accessories')
+        plataform_lookup, price_lookup = helpers.build_filters_lookups(request, 'accessories')
         accessories = Accessories.objects.filter(plataform_lookup, price_lookup)
     else:
         accessories = Accessories.objects.all()

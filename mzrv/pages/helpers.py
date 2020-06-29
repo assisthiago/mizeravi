@@ -1,6 +1,10 @@
 from django.db.models import Q
 
-def build_lookups(request, model_name):
+def build_search_lookups(request):
+    value = request.GET.get('search')
+    return Q(name__contains=value) | Q(plataforms__contains=value)
+
+def build_filters_lookups(request, model_name):
     if model_name == 'games':
         if request.GET.getlist('plataforms'):
             plataforms = request.GET.getlist('plataforms')

@@ -18,7 +18,7 @@ class AccessoryForm(forms.ModelForm):
 
     main_photo = forms.ImageField(label='Foto')
 
-    plataform = forms.ChoiceField(
+    plataforms = forms.ChoiceField(
         label='Plataforma',
         widget=forms.RadioSelect,
         choices=PLATAFORM_CHOICES)
@@ -29,5 +29,5 @@ class AccessoryForm(forms.ModelForm):
             'name',
             'price',
             'main_photo',
-            'plataform',
+            'plataforms',
         )

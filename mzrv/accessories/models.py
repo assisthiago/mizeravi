@@ -15,7 +15,7 @@ class Accessories(models.Model):
         upload_to='photos/accessories/',
         verbose_name='Imagem')
 
-    plataform = models.CharField(
+    plataforms = models.CharField(
         max_length=200,
         verbose_name='Plataforma')
 
@@ -29,4 +29,4 @@ class Accessories(models.Model):
 
     class Meta():
         ordering = ('name',)
-        verbose_name = 'Accessório'
+        verbose_name = 'Acessório'

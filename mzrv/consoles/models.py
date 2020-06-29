@@ -15,7 +15,7 @@ class Consoles(models.Model):
         upload_to='photos/consoles/',
         verbose_name='Imagem')
 
-    plataform = models.CharField(
+    plataforms = models.CharField(
         max_length=200,
         verbose_name='Plataforma')
 

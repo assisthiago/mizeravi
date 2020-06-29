@@ -12,7 +12,7 @@ class ConsoleAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'price',
-        'plataform',
+        'plataforms',
         'created_at',
     )
 

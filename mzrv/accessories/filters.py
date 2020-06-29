@@ -12,6 +12,6 @@ class PlataformFilter(SimpleListFilter):
 
     def queryset(self, request, queryset):
         if self.value():
-            return queryset.filter(plataform=self.value())
+            return queryset.filter(plataforms=self.value())
 
         return queryset.all()

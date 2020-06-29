@@ -12,7 +12,7 @@ class AccessoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'price',
-        'plataform',
+        'plataforms',
         'created_at',
     )
 
