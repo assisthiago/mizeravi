@@ -2,62 +2,69 @@
 
 {% block content %}
 
-<section id="games" class="mb-3">
-
-    {% if games %}
-        <h1>Jogos</h1>
-
-        <div class="row">
-            {% for object in games %}
-                {% include 'partials/_card.html' with data=object %}
-            {% endfor %}
-        </div>
-
-        <div class="text-center">
-            <a href="/games">Ver mais</a>
-        </div>
-
-        <hr>
-    {% endif %}
-
+<!-- Search -->
+<section id="search" class="search-container mb-5">
+    {% include 'partials/_search.html' %}
 </section>
 
-<section id="consoles" class="mb-3">
+<div class="container">
+    <section id="games" class="mb-3">
 
-    {% if consoles %}
-        <h1>Consoles</h1>
+        {% if games %}
+            <h1>Jogos</h1>
 
-        <div class="row">
-            {% for object in consoles %}
-                {% include 'partials/_card.html' with data=object %}
-            {% endfor %}
-        </div>
+            <div class="row">
+                {% for object in games %}
+                    {% include 'partials/_card.html' with data=object %}
+                {% endfor %}
+            </div>
 
-        <div class="text-center">
-            <a href="/consoles">Ver mais</a>
-        </div>
+            <div class="text-center">
+                <a href="/games">Ver mais</a>
+            </div>
 
-        <hr>
-    {% endif %}
+            <hr>
+        {% endif %}
 
-</section>
+    </section>
 
-<section id="accessories" class="mb-3">
+    <section id="consoles" class="mb-3">
 
-    {% if accessories %}
-        <h1>Acessórios</h1>
+        {% if consoles %}
+            <h1>Consoles</h1>
 
-        <div class="row">
-            {% for object in accessories %}
-                {% include 'partials/_card.html' with data=object %}
-            {% endfor %}
-        </div>
+            <div class="row">
+                {% for object in consoles %}
+                    {% include 'partials/_card.html' with data=object %}
+                {% endfor %}
+            </div>
 
-        <div class="text-center">
-            <a href="/accessories">Ver mais</a>
-        </div>
-    {% endif %}
+            <div class="text-center">
+                <a href="/consoles">Ver mais</a>
+            </div>
 
-</section>
+            <hr>
+        {% endif %}
+
+    </section>
+
+    <section id="accessories" class="mb-3">
+
+        {% if accessories %}
+            <h1>Acessórios</h1>
+
+            <div class="row">
+                {% for object in accessories %}
+                    {% include 'partials/_card.html' with data=object %}
+                {% endfor %}
+            </div>
+
+            <div class="text-center">
+                <a href="/accessories">Ver mais</a>
+            </div>
+        {% endif %}
+
+    </section>
+</div>
 
 {% endblock %}

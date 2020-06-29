@@ -1,13 +1,8 @@
 from django import forms
 
+from consoles.forms import PLATAFORMS_CHOICES
+
 from .models import Accessories
-
-
-PLATAFORM_CHOICES = (
-    ('Microsoft', 'Microsoft'),
-    ('Nintendo', 'Nintendo'),
-    ('Playstation', 'Playstation'),
-)
 
 class AccessoryForm(forms.ModelForm):
     name = forms.CharField(label='Nome', max_length=200)
@@ -21,7 +16,7 @@ class AccessoryForm(forms.ModelForm):
     plataforms = forms.MultipleChoiceField(
         label='Plataforma',
         widget=forms.CheckboxSelectMultiple,
-        choices=PLATAFORM_CHOICES)
+        choices=PLATAFORMS_CHOICES)
 
     class Meta:
         model = Accessories

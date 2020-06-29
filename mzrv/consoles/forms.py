@@ -3,7 +3,7 @@ from django import forms
 from .models import Consoles
 
 
-PLATAFORM_CHOICES = (
+PLATAFORMS_CHOICES = (
     ('Microsoft', 'Microsoft'),
     ('Nintendo', 'Nintendo'),
     ('Playstation', 'Playstation'),
@@ -21,7 +21,7 @@ class ConsoleForm(forms.ModelForm):
     plataforms = forms.MultipleChoiceField(
         label='Plataforma',
         widget=forms.CheckboxSelectMultiple,
-        choices=PLATAFORM_CHOICES)
+        choices=PLATAFORMS_CHOICES)
 
     class Meta:
         model = Consoles

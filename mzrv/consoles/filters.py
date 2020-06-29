@@ -1,6 +1,6 @@
 from django.contrib.admin import SimpleListFilter
 
-from .forms import PLATAFORM_CHOICES
+from .forms import PLATAFORMS_CHOICES
 
 
 class PlataformFilter(SimpleListFilter):
@@ -8,7 +8,7 @@ class PlataformFilter(SimpleListFilter):
     parameter_name = 'plataforms'
 
     def lookups(self, request, model_admin):
-        return PLATAFORM_CHOICES
+        return PLATAFORMS_CHOICES
 
     def queryset(self, request, queryset):
         if self.value():

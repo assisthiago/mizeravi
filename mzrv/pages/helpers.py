@@ -2,7 +2,7 @@ from django.db.models import Q
 
 def build_search_lookups(request):
     value = request.GET.get('search')
-    return Q(name__contains=value) | Q(plataforms__contains=value)
+    return Q(name__icontains=value)
 
 def build_filters_lookups(request, model_name):
     if request.GET.getlist('plataforms'):

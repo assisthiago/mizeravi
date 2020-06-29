@@ -1,8 +1,7 @@
 from django.shortcuts import render
 
-from accessories.forms import PLATAFORM_CHOICES as ACCESSORIES_PLATAFORM_CHOICES
-from consoles.forms import PLATAFORM_CHOICES as CONSOLE_PLATAFORM_CHOICES
-from games.forms import PLATAFORM_CHOICES as GAME_PLATAFORM_CHOICES
+from consoles.forms import PLATAFORMS_CHOICES as CONSOLE_PLATAFORMS_CHOICES
+from games.forms import PLATAFORMS_CHOICES as GAME_PLATAFORMS_CHOICES
 
 from accessories.models import Accessories
 from consoles.models import Consoles
@@ -11,7 +10,7 @@ from games.models import Games
 from . import helpers
 
 def index(request):
-    if bool(request.GET):
+    if bool(request.GET.get('search')):
         search_lookups = helpers.build_search_lookups(request)
 
         accessories = Accessories.objects.filter(
@@ -41,7 +40,7 @@ def games(request):
         games = Games.objects.all()
 
     plataforms_filter, price_filter = helpers.check_which_filter_is_selected(request)
-    plataforms_choices = [plataform[0] for plataform in GAME_PLATAFORM_CHOICES]
+    plataforms_choices = [plataform[0] for plataform in GAME_PLATAFORMS_CHOICES]
 
     extra_context = {
         'page': 'Jogos',
@@ -64,7 +63,7 @@ def consoles(request):
         consoles = Consoles.objects.all()
 
     plataforms_filter, price_filter = helpers.check_which_filter_is_selected(request)
-    plataforms_choices = [plataform[0] for plataform in CONSOLE_PLATAFORM_CHOICES]
+    plataforms_choices = [plataform[0] for plataform in CONSOLE_PLATAFORMS_CHOICES]
 
     extra_context = {
         'page': 'Videogames',
@@ -87,7 +86,7 @@ def accessories(request):
         accessories = Accessories.objects.all()
 
     plataforms_filter, price_filter = helpers.check_which_filter_is_selected(request)
-    plataforms_choices = [plataform[0] for plataform in ACCESSORIES_PLATAFORM_CHOICES]
+    plataforms_choices = [plataform[0] for plataform in CONSOLE_PLATAFORMS_CHOICES]
 
     extra_context = {
         'page': 'Acessórios',

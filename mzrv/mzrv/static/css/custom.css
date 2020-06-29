@@ -1,8 +1,14 @@
+.listings-container,
 .search-container {
     height: 70vh;
     background-color: lightcoral;
     display: flex;
     align-items: center;
+}
+
+.listings-container {
+    height: 40vh;
+    background-color: lightpink;
 }
 
 .search-container small {
