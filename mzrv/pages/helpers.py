@@ -1,6 +1,6 @@
 from django.db.models import Q
 
-def build_lookup(request, model_name):
+def build_lookups(request, model_name):
     if model_name == 'games':
         if request.GET.getlist('plataforms'):
             plataforms = request.GET.getlist('plataforms')
@@ -23,3 +23,20 @@ def build_lookup(request, model_name):
         price_lookup = Q(price__isnull=False)
 
     return (plataform_lookup, price_lookup)
+
+def check_which_filter_is_selected(request):
+    if request.GET.getlist('plataforms'):
+        plataforms = request.GET.getlist('plataforms')
+        plataforms_filters = [p.lower().replace(' ', '-') for p in plataforms]
+    elif request.GET.get('plataforms'):
+        plataforms = request.GET.get('plataforms')
+        plataforms_filters = [p.lower().replace(' ', '-') for p in plataforms]
+    else:
+        plataforms_filters = []
+
+    if request.GET.get('price'):
+        price_filter = request.GET.get('price')
+    else:
+        price_filter = ''
+
+    return (plataforms_filters, price_filter)
